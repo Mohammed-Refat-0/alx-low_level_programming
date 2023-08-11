@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+/* main:entry point and return 0 */
 int main(void)
 {
 	char str[52];
