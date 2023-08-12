@@ -10,8 +10,7 @@ int main(void)
 
 	for (n = 0; n < 10; n++)
 	{
-		n = n + 48;
-		putchar(n);
+		putchar(48 + n);
 	}
 	putchar('\n');
 	return (0);
