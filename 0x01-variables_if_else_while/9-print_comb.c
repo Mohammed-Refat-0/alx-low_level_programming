@@ -10,16 +10,13 @@ int main(void)
 
 	for (n = 0; n < 10; n++)
 	{
-		if (n == 9)
+		putchar(48 + n);
+		if (n != 9)
 		{
-			putchar(48 + n);
-		}
-		else
-		{
-			putchar(48 + n);
 			putchar(',');
 			putchar(' ');
 		}
 	}
+	putchar('\n');
 	return (0);
 }
