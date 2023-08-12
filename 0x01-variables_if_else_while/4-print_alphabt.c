@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	char C = 'a';
+	unsigned char C = 'a';
 
 	while (C < 123)
 	{
