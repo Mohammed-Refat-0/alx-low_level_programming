@@ -5,15 +5,11 @@
  */
 int main(void)
 {
-	unsigned char C = 'a';
+	 char C = 'a';
 
 	while (C < 123)
 	{
-		if (C == 101)
-		{
-			C++;
-		}
-		else if (C == 131)
+		if (C == 101 || C == 113)
 		{
 			C++;
 		}
