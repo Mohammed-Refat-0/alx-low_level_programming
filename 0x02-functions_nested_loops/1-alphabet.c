@@ -1,6 +1,11 @@
 #include "main.h"
-void print_alphabet(void){
-	
+/**
+*print_alphabet - function that print alphabet
+*it prints in lowercase
+*Return: void
+*/
+void print_alphabet(void)
+{
 	char C = 'a';
 
 	while (C < 123)
