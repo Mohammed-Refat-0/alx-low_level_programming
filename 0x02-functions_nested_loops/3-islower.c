@@ -3,7 +3,7 @@
 *_islower(int c); - checks if a char is lower case
 *Return: void
 */
-int _islower(int c);
+int _islower(int c)
 {
 	int k = (int)c;
 	int i;
