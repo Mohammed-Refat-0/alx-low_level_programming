@@ -11,7 +11,7 @@ int main(void)
 
 	for (i = 0; i <= 7; i++)
 	{
-		_putchiar(out[i]);
+		_putchar(out[i]);
 	}
 	_putchar('\n');
 	return (0);
