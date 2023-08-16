@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-*_isalpha(int c) - checks if input is  a character
+*_isalpha - checks if input is  a character
 *@c: character to be verified
 *Return: return 0 or 1
 */
