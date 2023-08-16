@@ -4,7 +4,7 @@
 *it prints in lowercase 10 times
 *Return: void
 */
-void print_alphabet_x10(void);
+void print_alphabet_x10(void)
 {
 	char C = 'a';
 	int i;
