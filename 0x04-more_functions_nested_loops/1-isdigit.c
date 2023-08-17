@@ -4,7 +4,7 @@
 *Return: 1 if digit, otherwise 0
 *@c : input  to be verified
 */
-int _isdigit(int c);
+int _isdigit(int c)
 {
 	int i;
 
