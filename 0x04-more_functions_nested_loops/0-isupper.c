@@ -7,15 +7,13 @@ include "main.h"
 int _isupper(int c)
 {
 	int i;
+	int k = (int)c;
 
 	for (i = 65; i < 91; i++)
 	{
-		if (c == i)
+		if (k == i)
 		{
 			return (1);
-		}
-		else
-		{
 		}
 	}
 	return (0);
