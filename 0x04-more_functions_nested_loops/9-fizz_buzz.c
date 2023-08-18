@@ -10,9 +10,9 @@ int main(void)
 
 	for (i = 1 ; i < 101; i++)
 	{
-		if (i % 3 == 0)
+		if ((i % 5 == 0) && (i % 3 == 0))
 		{
-			printf("Fizz");
+			printf("FizzBuzz");
 			printf(" ");
 		}
 		else if (i % 5 == 0)
@@ -20,9 +20,9 @@ int main(void)
 			printf("Buzz");
 			printf(" ");
 		}
-		else if ((i % 5 == 0) && (i % 3 == 0))
+		else if (i % 3 == 0)
 		{
-			printf("FizzBuzz");
+			printf("Fizz");
 			printf(" ");
 		}
 		else if (i == 100)
