@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - program that finds the sum of even numbers in 
+ * main - program that finds the sum of even numbers in
  *  fibonacci series of value below 4 million
  * Return: 0
  */
@@ -21,6 +21,6 @@ int main(void)
 		a = b;
 		b = c;
 	}
-	printf("%ld\n", sum); 
+	printf("%ld\n", sum);
 	return (0);
 }
