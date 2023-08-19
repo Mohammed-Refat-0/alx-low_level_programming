@@ -5,21 +5,21 @@
  */
 int main(void)
 {
-	int a = 1;
-	int b = 2;
-	int c;
+	long a = 1;
+	long b = 2;
+	long c;
 	int i;
 
-	printf("%d, %d, ", a, b);
-	c = a + b;
+	printf("%ld, %ld, ", a, b);
 	for (i = 0; i < 50; i++)
 	{
+		c = a + b;
 		if (i !=50)
 		{
-			printf("%d, ", c);
+			printf("%ld, ", c);
 		}
+		a = b;
 		b = c;
-		c = c + b;
 	}
 	printf("\n");
 	return (0);
