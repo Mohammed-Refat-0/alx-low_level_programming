@@ -25,9 +25,9 @@ void print_times_table(int n)
 					b = h % 10;
 					h = h / 10;
 					c = h % 10;
-					_purchar('c' + 48);
-					_putchar('b' + 48);
-					_putchar('a' + 48);
+					_putchar(c + 48);
+					_putchar(b + 48);
+					_putchar(a + 48);
 					_putchar(',');
 					_putchar(' ');
 
@@ -37,16 +37,16 @@ void print_times_table(int n)
 					h = i * j;
 					a = h % 10;
 					h = h / 10;
-					b = h %10;
-					_putchar('b' + 48);
-					_putchar('a' + 48);
+					b = h % 10;
+					_putchar(b + 48);
+					_putchar(a + 48);
 					_putchar(',');
 					_putchar(' ');
 				}
 				else 
 				{
 					h = i * j; 
-					_putchar('h' + 48);
+					_putchar(h + 48);
 					_putchar(',');
 					_putchar(' ');		
 				}
