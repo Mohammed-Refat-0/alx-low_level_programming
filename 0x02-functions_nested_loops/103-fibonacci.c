@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - program that finds the sum of eve numbers in 
+ * main - program that finds the sum of even numbers in 
  *  fibonacci series of value below 4 million
  * Return: 0
  */
