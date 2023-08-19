@@ -5,17 +5,19 @@
  */
 int main(void)
 {
-	int a = 0;
-	int b = 1;
-	int i;
+	int a = 1;
+	int b = 2;
+	int c;
+	printf("%d, %d, ", a, b);
+	c = a + b;
 	for (i = 0; i < 50; i++)
 	{
-		a++;
-		b++;
 		if (i !=50)
 		{
-			printf("%d, ", a+b);
+			printf("%d, ", c);
 		}
+		b = c;
+		c = c + b;
 	}
 	printf("\n");
 	return (0);
