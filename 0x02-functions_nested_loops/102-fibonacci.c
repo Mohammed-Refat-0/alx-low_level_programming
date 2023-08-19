@@ -11,10 +11,10 @@ int main(void)
 	int i;
 
 	printf("%ld, %ld, ", a, b);
-	for (i = 0; i < 50; i++)
+	for (i = 0; i < 48; i++)
 	{
 		c = a + b;
-		if (i !=50)
+		if (i !=48)
 		{
 			printf("%ld, ", c);
 		}
