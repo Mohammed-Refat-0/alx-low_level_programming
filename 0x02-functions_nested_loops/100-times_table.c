@@ -63,10 +63,7 @@ void print_times_table(int n)
 					}		
 				}
 			}
-			if ( i != n)
-			{
-				_putchar('\n');
-			}
+			_putchar('\n');
 		}
 
 	}
