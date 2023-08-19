@@ -13,9 +13,9 @@ void print_times_table(int n)
 	}
 	else
 	{
-		for (i = 0; i < n; i++)
+		for (i = 0; i <= n; i++)
 		{
-			for (j = 0; j < n; j++)
+			for (j = 0; j <= n; j++)
 			{
 				if(i * j >= 100)
 				{
