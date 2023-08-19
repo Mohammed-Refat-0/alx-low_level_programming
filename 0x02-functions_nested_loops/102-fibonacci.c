@@ -9,8 +9,8 @@ int main(void)
 	int b = 1;
 	for (i = 0; i < 50; i++)
 	{
-		a++
-		b++
+		a++;
+		b++;
 		if (i !=50)
 		{
 			printf("%d, ", a+b);
