@@ -14,7 +14,7 @@ int main(void)
 	for (i = 0; i < 48; i++)
 	{
 		c = a + b;
-		if (i !=48)
+		if (i != 47)
 		{
 			printf("%ld, ", c);
 		}
