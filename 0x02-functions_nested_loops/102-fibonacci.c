@@ -8,6 +8,8 @@ int main(void)
 	int a = 1;
 	int b = 2;
 	int c;
+	int i;
+
 	printf("%d, %d, ", a, b);
 	c = a + b;
 	for (i = 0; i < 50; i++)
