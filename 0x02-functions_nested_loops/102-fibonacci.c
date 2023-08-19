@@ -7,6 +7,7 @@ int main(void)
 {
 	int a = 0;
 	int b = 1;
+	int i;
 	for (i = 0; i < 50; i++)
 	{
 		a++;
@@ -16,6 +17,6 @@ int main(void)
 			printf("%d, ", a+b);
 		}
 	}
-	printf("\n")
+	printf("\n");
 	return (0);
 }
