@@ -4,7 +4,7 @@
  * @s: string
  *Return:void
  */
-void rev_string(char *s);
+void rev_string(char *s)
 {
 	int c = 0;
 	int i =0;
@@ -21,5 +21,4 @@ void rev_string(char *s);
 	      arr[i] = *s;
        }
        *s = arr;
-       _putchar('\n');
 }
