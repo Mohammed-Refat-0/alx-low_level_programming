@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 /**
  * swap_int- swap the value of two vars
  * @a,@b : vaules to swap
