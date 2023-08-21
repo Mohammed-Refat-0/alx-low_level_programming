@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 /**
  * int _strlen - return length of string
  * @s: string to evalute
