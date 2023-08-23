@@ -16,7 +16,8 @@ char *cap_string(char *ptr)
 		}
 		if (ptr[length] == 44 || ptr[length] == 59 || ptr[length] == 46 
 			|| ptr[length] == 33 || ptr[length] == 63 || ptr[length] == 34 
-			|| ptr[length] == 40 || ptr[length] == 41 || ptr[length] == 123 || ptr[length] == 125)
+			|| ptr[length] == 40 || ptr[length] == 41 || ptr[length] == 123 || ptr[length] == 125
+			|| ptr[length] == 9 || ptr[length] == 10 || ptr[length] == 32)
 		{
 			length++;
 			if (ptr[length] >= 97 && ptr[length] <= 122)
