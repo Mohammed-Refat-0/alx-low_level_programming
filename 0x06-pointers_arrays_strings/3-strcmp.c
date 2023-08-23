@@ -3,7 +3,7 @@
  * _strcmp - compare two strings
  * @s1: string 1 to compare
  * @s2: string 2 to compare
- * Return: 0, 1 0r -1 
+ * Return: 0, 1 0r -1
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -14,7 +14,7 @@ int _strcmp(char *s1, char *s2)
 		if (s1[length] == s2[length])
 		{
 		}
-		else if(s1[length] > s2[length])
+		else if (s1[length] > s2[length])
 		{
 			return (1);
 		}
