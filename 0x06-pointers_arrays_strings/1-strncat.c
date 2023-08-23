@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _strcat - concatenates two strings with n bytes input
+ * _strncat - concatenates two strings with n bytes input
  * @src:prt to string
  * @dest: ptr to string
  * @n: bytes
