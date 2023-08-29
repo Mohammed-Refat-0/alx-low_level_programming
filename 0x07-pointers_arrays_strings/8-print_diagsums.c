@@ -12,7 +12,6 @@ void print_diagsums(int *a, int size)
 {
 	int i;
 	int j;
-	int *arr = *a[];
 	unsigned int sum1 = 0;
 	unsigned int sum2 = 0;
 
@@ -22,10 +21,10 @@ void print_diagsums(int *a, int size)
 		{
 			if (i == j)
 			{
-				sum1 = sum1 + (arr[i][j]);
+				sum1 = sum1 + a[((i * size) + j)];
 			}
 		}
-		sum2 = sum2 + (arr[i][j - i]);
+		sum2 = sum2 + a[(size * i) + (j - i)];
 	}
 	printf("%d, %d\n", sum1, sum2);
 }
