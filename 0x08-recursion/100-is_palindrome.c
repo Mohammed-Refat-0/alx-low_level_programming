@@ -36,5 +36,5 @@ int pand(char *s, int i)
 	{
 		return (1);
 	}
-	return (pand(s - 1, i - 1));
+	return (pand(s + 1, i - 1));
 }
