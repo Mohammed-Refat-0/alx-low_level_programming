@@ -28,13 +28,13 @@ int pand(char *s, int i)
 {
 	char *p = (s + i);
 
-	if (i < 0)
-	{
-		return (1);
-	}
 	if (*s != *p)
 	{
 		return (0);
+	}
+	if (i < 0)
+	{
+		return (1);
 	}
 	return (pand(s - 1, i - 1));
 }
