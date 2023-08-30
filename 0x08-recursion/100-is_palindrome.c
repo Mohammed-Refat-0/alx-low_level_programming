@@ -28,7 +28,7 @@ int pand(char *s, int i)
 {
 	char *p = (s + i);
 
-	if (i == 0)
+	if (i < 0)
 	{
 		return (1);
 	}
