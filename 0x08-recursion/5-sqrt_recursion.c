@@ -6,7 +6,7 @@
  */
 int _sqrt_recursion(int n)
 {
-	return (sqrty(n, 1);
+	return (sqrty(n, 1));
 }
 /**
  *sqrt - to find natural square root
