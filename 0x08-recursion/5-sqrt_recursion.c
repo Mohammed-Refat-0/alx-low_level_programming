@@ -6,7 +6,7 @@
  */
 int _sqrt_recursion(int n)
 {
-	return (sqrt(n, 1);
+	return (sqrty(n, 1);
 }
 /**
  *sqrt - to find natural square root
@@ -14,7 +14,7 @@ int _sqrt_recursion(int n)
  * @i: int
  * Return: value
  */
-int sqrt(int n, int i)
+int sqrty(int n, int i)
 {
 	if (n < 0)
 	{
@@ -28,5 +28,5 @@ int sqrt(int n, int i)
 	{
 		return (i);
 	}
-	return (sqrt(n, i + 1));
+	return (sqrty(n, i + 1));
 }
