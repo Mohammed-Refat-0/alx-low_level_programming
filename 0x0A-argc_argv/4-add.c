@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	int n, i;
 	int sum = 0;
 
-	for (n = 1; n < argc; n)
+	for (n = 1; n < argc; n++)
 	{
 		for (i = 0; argv[n][i]; i++)
 		{
