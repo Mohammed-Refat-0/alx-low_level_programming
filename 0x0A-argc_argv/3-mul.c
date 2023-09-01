@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 /**
  * main - multiple and  prints two numbers
@@ -13,7 +14,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return(1);
 	}
-	int c = argv[1] * argv[2];
+
+	int c = atoi(argv[1]) * atoi(argv[2]);
 	printf("%d\n", c);
 	return (0);
 }
