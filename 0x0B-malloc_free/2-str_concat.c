@@ -13,11 +13,11 @@ char *str_concat(char *s1, char *s2)
 	int length2 = 0;
 	char *ptr;
 
-	while (s1[length1] != '\0')
+	while (s1[length1] != '\0' && s1 != NULL)
 	{
 		length1++;
 	}
-	while (s2[length2] != '\0')
+	while (s2[length2] != '\0' && s2 != NULL)
 	{
 		length2++;
 	}
