@@ -28,6 +28,7 @@ char *argstostr(int ac, char **av)
 	if (!ptr)
 	{
 		free(ptr);
+		return (NULL);
 	}
 	for (i = 0; i < ac; i++)
 	{
@@ -39,5 +40,6 @@ char *argstostr(int ac, char **av)
 		*ptr = '\n';
 		ptr++;
 	}
+	*ptr = '\0';
 	return (ptr);
 }
