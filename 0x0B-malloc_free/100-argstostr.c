@@ -9,7 +9,7 @@
 char *argstostr(int ac, char **av)
 {
 	int i, j;
-	char *ptr;
+	char *ptr, *ptr1;
 	int length = 0;
 
 	if (ac == 0 || !av)
@@ -30,16 +30,17 @@ char *argstostr(int ac, char **av)
 		free(ptr);
 		return (NULL);
 	}
+	ptr1 = ptr;
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			*ptr = av[i][j];
-			ptr++;
+			*ptr1 = av[i][j];
+			ptr1++;
 		}
-		*ptr = '\n';
-		ptr++;
+		*ptr1 = '\n';
+		ptr1++;
 	}
-	*ptr = '\0';
+	*ptr1 = '\0';
 	return (ptr);
 }
