@@ -9,7 +9,8 @@
 char *str_concat(char *s1, char *s2)
 {
 	int j;
-	int length1, length2 = 0;
+	int length1 = 0;
+	int length2 = 0;
 	char *ptr;
 
 	while (s1[length1] != '\0')
