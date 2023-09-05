@@ -12,13 +12,13 @@ char **strtow(char *str)
 	int words = 0;
 	int c = 0;
 
-	if (!str)
+	if (!str || *str == " " || *str == "")
 	{
 		return (NULL);
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == 32)
+		if (str[i] == ' ')
 		{
 			words++;
 		}
@@ -46,7 +46,7 @@ char **strtow(char *str)
 
 	for (i = 0; ptr[i] != NULL; i++)
 	{
-		for (j = 0; str[j] != 32; j++)
+		for (j = 0; str[j] != ' '; j++)
 		{
 			ptr[i][j] = str[j];
 		}
