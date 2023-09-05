@@ -12,7 +12,7 @@ char **strtow(char *str)
 	int words = 0;
 	int c = 0;
 
-	if (!str || *str == ' '  || *str == '')
+	if (!str || *str == ' '  || *str == '\0')
 	{
 		return (NULL);
 	}
