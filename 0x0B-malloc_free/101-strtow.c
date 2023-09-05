@@ -16,7 +16,6 @@ char **strtow(char *str)
 	{
 		return (NULL);
 	}
-	return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == 32)
