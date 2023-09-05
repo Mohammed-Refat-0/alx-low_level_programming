@@ -51,6 +51,7 @@ char **strtow(char *str)
 			ptr[i][j] = str[j];
 		}
 		ptr[i][j] = '\0';
+		j++;
 	}
 	return (ptr);
 }
