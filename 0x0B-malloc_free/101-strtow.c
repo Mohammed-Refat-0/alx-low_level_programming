@@ -23,7 +23,6 @@ char **strtow(char *str)
 			words++;
 		}
 	}
-	words++;
 	ptr = (char **) malloc((words + 1) * sizeof(char *));
 	if (!ptr)
 	{
