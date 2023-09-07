@@ -7,7 +7,6 @@
  * @ptr: pointer
  * Return: pointer
  */
-unsigned int min( unsigned int a, unsigned int b);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	unsigned int i;
@@ -39,7 +38,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		{
 			return (NULL);
 		}
-		for ( i = 0; i < min(new_size, old_size); i++)
+		for (i = 0; i < min(new_size, old_size); i++)
 		{
 			((char *)ptr1)[i] = ((char *)ptr)[i];
 		}
@@ -53,7 +52,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
  * @b: integer
  * Return: unsigned min
  */
-unsigned int min( unsigned int a, unsigned int b)
+unsigned int min(unsigned int a, unsigned int b)
 {
 	if (a > b)
 	{
