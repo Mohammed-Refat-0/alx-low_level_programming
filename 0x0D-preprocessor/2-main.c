@@ -1,9 +1,11 @@
-#ifndef HEADER_FILE
-#define _FILE_
 #include <stdio.h>
-#endif
+/**
+ * main - prints the name of the file
+ * Return: 0
+ */
 
 int main(void)
 {
-	printf("s\n", _FILE_);
+	printf("%s\n", __FILE__);
+	return (0);
 }
