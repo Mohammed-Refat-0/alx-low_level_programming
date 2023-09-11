@@ -9,14 +9,11 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	int i;
 	int length1 = 0;
 	int length2 = 0;
 	dog_t *dog;
 
-	if (!name || !owner)
-	{
-		return (NULL);
-	}
 	while (name[length1] != '\0')
 	{
 		length1++;
@@ -36,10 +33,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	dog->name = name;
+	for (i = 0; i < length1; i++)
+	{
+		dog->name[i] = name[i];
+	}
+	dog->name[length1] = '\0';
+	for (i = 0; i < length2; i++)
+	{
+		dog->owner[i] = owner[i];
+	}
+	dog->owner[length2] = '\0';
 	dog->age = age;
-	dog->owner = owner;
-	dog->name[length1 + 1] = '\0';
-	dog->owner[length2 + 1] = '\0';
 	return (dog);
 }
