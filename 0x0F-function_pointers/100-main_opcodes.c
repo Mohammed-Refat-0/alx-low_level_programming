@@ -4,7 +4,7 @@
  * main - prints its  opcodes
  * @argc: number of arguments
  * @argv: array of arguments strings
- * * Return: 0 
+ * * Return: 0
  */
 int main(int argc, char *argv[])
 {
