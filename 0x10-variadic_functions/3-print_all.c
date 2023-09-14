@@ -9,12 +9,11 @@
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	char *str, *sep = "";
+	char *s, *s1 = "";
 
-	va_list list;
+	va_list ap;
 
-	va_start(list, format);
-
+	va_start(ap, format);
 	if (format)
 	{
 		while (format[i])
@@ -22,29 +21,28 @@ void print_all(const char * const format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					printf("%s%c", sep, va_arg(list, int));
+					printf("%s%c", s1, va_arg(ap, int));
 					break;
 				case 'i':
-					printf("%s%d", sep, va_arg(list, int));
+					printf("%s%d", s1, va_arg(ap, int));
 					break;
 				case 'f':
-					printf("%s%f", sep, va_arg(list, double));
+					printf("%s%f", s1, va_arg(ap, double));
 					break;
 				case 's':
-					str = va_arg(list, char *);
-					if (!str)
-						str = "(nil)";
-					printf("%s%s", sep, str);
+					s = va_arg(ap, char *);
+					if (!s)
+						s = "(nil)";
+					printf("%s%s", s1, s);
 					break;
 				default:
 					i++;
 					continue;
 			}
-			sep = ", ";
+			s1 = ", ";
 			i++;
 		}
 	}
-
 	printf("\n");
-	va_end(list);
+	va_end(ap);
 }
