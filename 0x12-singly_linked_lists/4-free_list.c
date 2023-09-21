@@ -23,7 +23,7 @@ void free_list(list_t *head)
 	}
 	for (i = c; i > 0; i--)
 	{
-		free(head->next);
+		free(head[i].next);
 	}
 	free(head);
 }
