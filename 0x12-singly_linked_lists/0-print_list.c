@@ -7,7 +7,7 @@
  */
 size_t print_list(const list_t *h)
 {
-	int c;
+	int c = 0;
 	const list_t *ptr;
 	if (!h)
 	{
@@ -22,7 +22,7 @@ size_t print_list(const list_t *h)
 		}
 		else
 		{
-			printf("%s\n", ptr->str);
+			printf("[%d] %s\n", ptr -> len,ptr->str);
 		}
 		c++;
 		ptr = ptr->next;
