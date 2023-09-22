@@ -8,23 +8,17 @@
  */
 void free_list(list_t *head)
 {
-	unsigned int c = 0;
-	unsigned int i;
-	list_t *ptr = head;
+	list_t *ptr;
 
 	if (!head)
 	{
 		return;
 	}
-	while (ptr != NULL)
+	while (head != NULL)
 	{
-		ptr = ptr->next;
-		c++;
+		ptr = head->next;
+		free(head->str);
+		free(head);
+		head = ptr;
 	}
-	for (i = c; i > 0; i--)
-	{
-		free(head[i].str);
-		free(head[i].next);
-	}
-	free(head);
 }
