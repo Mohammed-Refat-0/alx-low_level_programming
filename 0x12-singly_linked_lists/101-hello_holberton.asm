@@ -6,4 +6,5 @@ main:
 	  call  printf
 	  mov 	eax, 0
 	  ret
+	  exit
 message: db `Hello, Holberton\n`,0
