@@ -24,13 +24,13 @@ int create_file(const char *filename, char *text_content)
 	{
 		while (*text_content)
 		{
-			text_content++;
 			checker = write(file, text_content, 1);
 			if (checker != 1)
 			{
 				return (-1);
 			}
 		}
+		text_content++;
 	}
 	close(file);
 	return (1);
