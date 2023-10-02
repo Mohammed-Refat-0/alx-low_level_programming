@@ -7,7 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd_r, fd_w, x, m, n;
+	int fd_r, fd_w, x, checker1, checker2;
 	char buf[BUFSIZ];
 
 	if (argc != 3)
@@ -36,14 +36,18 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	m = close(fd_r);
-	n = close(fd_w);
-	if (m < 0 || n < 0)
+	checker1 = close(fd_r);
+	checker2 = close(fd_w);
+	if (checker1 < 0 || checker2 < 0)
 	{
-		if (m < 0)
+		if (checker1 < 0)
+		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_r);
-		if (n < 0)
+		}
+		if (checker2 < 0)
+		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_w);
+		}
 		exit(100);
 	}
 	return (0);
