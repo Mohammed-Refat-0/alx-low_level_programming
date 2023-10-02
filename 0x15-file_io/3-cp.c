@@ -41,13 +41,9 @@ int main(int argc, char *argv[])
 	if (checker1 < 0 || checker2 < 0)
 	{
 		if (checker1 < 0)
-		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_r);
-		}
 		if (checker2 < 0)
-		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_w);
-		}
 		exit(100);
 	}
 	return (0);
