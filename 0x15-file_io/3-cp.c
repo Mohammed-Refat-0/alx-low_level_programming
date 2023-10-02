@@ -7,7 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd_r, fd_w, x, m, n;
+	int fd_r, fd_w, x, check3, check4;
 	char buf[BUFSIZ];
 
 	if (argc != 3)
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fd_w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd_w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 664);
 	while ((x = read(fd_r, buf, BUFSIZ)) > 0)
 	{
 		if (fd_w < 0 || write(fd_w, buf, x) != x)
@@ -36,14 +36,18 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	m = close(fd_r);
-	n = close(fd_w);
-	if (m < 0 || n < 0)
+	check3 = close(fd_r);
+	check4 = close(fd_w);
+	if (check3 < 0 || check4 < 0)
 	{
-		if (m < 0)
+		if (check3 < 0)
+		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_r);
-		if (n < 0)
+		}
+		if (check4 < 0)
+		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_w);
+		}
 		exit(100);
 	}
 	return (0);
