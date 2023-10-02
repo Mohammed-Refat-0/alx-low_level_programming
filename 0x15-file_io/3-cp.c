@@ -7,47 +7,54 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd_r, fd_w, x, check3, check4;
-	char buf[1024];
+	int fileto;
+	int filefrom;
+	char buffer[BUFSIZ];
+	int checker1;
+	int checker2;
+	int checker3;
+	int checker4;
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_t\n");
 		exit(97);
 	}
-	fd_r = open(argv[1], O_RDONLY);
-	if (fd_r < 0)
+	filefrom = open(argv[1], O_RDONLY);
+	if (filefrom < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fd_w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	while ((x = read(fd_r, buf, BUFSIZ)) > 0)
+	fileto = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (fileto < 0)
 	{
-		if (fd_w < 0 || write(fd_w, buf, x) != x)
+		dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE %s\n", argv[2]);
+		exit(99);
+	}
+
+	while ((checker1 = read(filefrom, buffer, 1024)) > 0)
+	{
+		if (checker1 < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		checker2 = write(fileto, buffer, 1024);
+		if (checker1 != checker2)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(fd_r);
 			exit(99);
 		}
 	}
-	if (x < 0)
+	checker3 = close(filefrom);
+	checker4 = close(fileto);
+	if (checker3 < 0 || checker4 < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	check3 = close(fd_r);
-	check4 = close(fd_w);
-	if (check3 < 0 || check4 < 0)
-	{
-		if (check3 < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_r);
-		}
-		if (check4 < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_w);
-		}
+		if (checker3 < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", filefrom);
+		if (checker4 < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileto);
 		exit(100);
 	}
 	return (0);
