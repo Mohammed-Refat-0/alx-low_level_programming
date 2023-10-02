@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
 		if (checker1 != checker2)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close(filefrom);
 			exit(99);
 		}
 	}
