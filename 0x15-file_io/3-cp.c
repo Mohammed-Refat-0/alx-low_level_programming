@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
 	int fd_r, fd_w, x, check3, check4;
-	char buf[BUFSIZ];
+	char buf[1024];
 
 	if (argc != 3)
 	{
