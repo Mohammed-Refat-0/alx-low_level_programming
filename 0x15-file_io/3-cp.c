@@ -7,43 +7,43 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd_r, fd_w, x, checker1, checker2;
-	char buf[BUFSIZ];
+	int fd_read, fd_write, i, checker1, checker2;
+	char buffer[BUFSIZ];
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	fd_r = open(argv[1], O_RDONLY);
-	if (fd_r < 0)
+	fd_read = open(argv[1], O_RDONLY);
+	if (fd_read < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fd_w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	while ((x = read(fd_r, buf, BUFSIZ)) > 0)
+	fd_write = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((i = read(fd_read, buffer, BUFSIZ)) > 0)
 	{
-		if (fd_w < 0 || write(fd_w, buf, x) != x)
+		if (fd_write < 0 || write(fd_write, buffer, i) != i)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(fd_r);
+			close(fd_read);
 			exit(99);
 		}
 	}
-	if (x < 0)
+	if (i < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	checker1 = close(fd_r);
-	checker2 = close(fd_w);
+	checker1 = close(fd_read);
+	checker2 = close(fd_write);
 	if (checker1 < 0 || checker2 < 0)
 	{
 		if (checker1 < 0)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_r);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_read);
 		if (checker2 < 0)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_w);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_write);
 		exit(100);
 	}
 	return (0);
