@@ -58,5 +58,9 @@ int recursive_binary(int *array, size_t size, int value)
 int binary_search(int *array, size_t size, int value)
 {
 	int index = recursive_binary(array, size, value);
+
+	if (index >= 0 && array[index] != value)
+		return (-1);
+
 	return (index);
 }
