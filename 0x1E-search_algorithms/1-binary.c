@@ -8,8 +8,7 @@
  */
 int recursive_binary(int *array, size_t size, int value)
 {
-	size_t search_index;
-	size_t i;
+	size_t search_index, i;
 
 	if (array == NULL || size == 0)
 	{
@@ -25,7 +24,7 @@ int recursive_binary(int *array, size_t size, int value)
 
 	printf("\n");
 
-	if (search_index && size % 2 == 0)
+	if (size % 2 == 0)
 	{
 		search_index = (size / 2) - 1;
 	}
@@ -40,11 +39,11 @@ int recursive_binary(int *array, size_t size, int value)
 	}
 
 	if (value < array[search_index])
-		return (recursive_search(array, search_index, value));
+		return (recursive_binary(array, search_index, value));
 
 	search_index++;
 
-	return (recursive_search(array + search_index, size - search_index, value)
+	return (recursive_binary(array + search_index, size - search_index, value)
 			+ search_index);
 }
 
@@ -58,7 +57,7 @@ int recursive_binary(int *array, size_t size, int value)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int index = recursive_search(array, size, value);
+	int index = recursive_binary(array, size, value);
 
 	if (index >= 0 && array[index] != value)
 		return (-1);
